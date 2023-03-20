@@ -2,6 +2,14 @@
 
 Welcome to Silicon Valley! For this assignment, our domain is the startup world! We have three models - `Startup`, `VentureCapitalist`, and `FundingRound`. A `Startup` has many `VentureCapitalist`s through `FundingRound`s.
 
+Domain: Startup World
+Models: Startup
+        Funding Rounds
+        VentureCapitalist
+
+Relationships:
+Startup -------< Funding Rounds  ------- VentureCapitalist
+
 
 
 ## Topics
