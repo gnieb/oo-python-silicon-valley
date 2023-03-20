@@ -22,3 +22,6 @@ class Startup:
             if s.founder == founder_name:
                 startup_list.append(s)
         return startup_list[0]
+    
+    def sign_contract(self, venture_capitalist_object, type, investment):
+        FundingRound(self, venture_capitalist_object, type, investment)
