@@ -25,3 +25,19 @@ class Startup:
     
     def sign_contract(self, venture_capitalist_object, type, investment):
         FundingRound(self, venture_capitalist_object, type, investment)
+
+    @property
+    def num_funding_rounds(self):
+        return len([s for s in FundingRound.all if s._startup == self])
+
+    @property
+    def total_funds(self):
+        total_funding = 0
+        for s in FundingRound.all:
+            if s._startup == self:
+                total_funding += s.investment
+        return total_funding
+    
+    @property
+    def investors(self):
+        return list({s._venture_capitalist for s in FundingRound.all })
