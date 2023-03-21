@@ -8,9 +8,7 @@ Models: Startup
         VentureCapitalist
 
 Relationships:
-Startup -------< Funding Rounds  ------- VentureCapitalist
-
-
+Startup -------< Funding Rounds  >------- VentureCapitalist
 
 ## Topics
 

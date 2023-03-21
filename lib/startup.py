@@ -44,3 +44,9 @@ class Startup:
     @property
     def investors(self):
         return list({s._venture_capitalist for s in FundingRound.all })
+    
+    @property
+    def big_investors(self):
+        return [f for f in self.investors if f.total_worth > 1000000000]
+        
+
