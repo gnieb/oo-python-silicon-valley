@@ -6,4 +6,3 @@ class FundingRound:
         self.type = type
         self.investment = investment
         FundingRound.all.append(self)
-

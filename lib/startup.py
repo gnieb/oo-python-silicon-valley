@@ -23,8 +23,11 @@ class Startup:
                 startup_list.append(s)
         return startup_list[0]
     
+
+    #how can I test this one????
     def sign_contract(self, venture_capitalist_object, type, investment):
-        FundingRound(self, venture_capitalist_object, type, investment)
+        return FundingRound(self, venture_capitalist_object, type, investment)
+        
 
     @property
     def num_funding_rounds(self):
