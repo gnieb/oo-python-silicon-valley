@@ -22,3 +22,29 @@ class Startup:
     @classmethod
     def domains(cls):
         return [s._domain for s in cls.all]
+    
+    def sign_contract(self, vc, type, amount):
+        FundingRound(self, vc, type, amount)
+
+    @property
+    def fundingrounds(self):
+        return [f for f in FundingRound.all if f._startup == self]
+
+    @property
+    def num_funding_rounds(self):
+        return len(self.fundingrounds)
+    
+    @property
+    def total_funds(self):
+        total = 0
+        for f in self.fundingrounds:
+            total += f.invest
+        return total
+    
+    @property
+    def investors(self):
+        return list({f._vc for f in self.fundingrounds })
+
+    @property
+    def big_investors(self):
+        return list({f._vc for f in self.fundingrounds if f._vc.total_worth > 1000000000 })
