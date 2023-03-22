@@ -9,3 +9,7 @@ class VentureCapitalist:
         self.name = name
         self.total_worth = total_worth
         VentureCapitalist.all.append(self)
+
+    @classmethod
+    def tres_comma_club(cls):
+        return [vc for vc in VentureCapitalist.all if vc.total_worth > 1000000000]
