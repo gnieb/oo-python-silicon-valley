@@ -4,5 +4,5 @@ class FundingRound:
         self._startup = startup_object
         self._venture_capitalist = venture_capitalist_object
         self.type = type
-        self.investment = investment
+        self.investment = abs(investment)
         FundingRound.all.append(self)
